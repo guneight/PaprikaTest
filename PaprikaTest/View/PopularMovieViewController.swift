@@ -19,20 +19,25 @@ class PopularMovieViewController: UIViewController {
         
     }
     
+    
     // MARK: - setuoUI
     
     func setupUI(){
-        view.backgroundColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
+        view.backgroundColor = colorHelper.backgroundBlue
         view.layoutIfNeeded()
         popularMovieTable.register(PopularMovieCell.self, forCellReuseIdentifier: "popularMovieCell")
         
-        view.addSubview(popularMovieTable)
-        UIHelper.makeTableView(tableView: popularMovieTable, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: view.safeAreaLayoutGuide.topAnchor, bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, bottomConstant: 0, separatorStyle: .singleLine, showsVerticalScrollIndicator: true, backgroundColor: colorHelper.whiteColor)
-        
-        let screenSize: CGRect = UIScreen.main.bounds
-        let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width , height: 44))
-        view.addSubview(navigationBar)
+        let width = self.view.frame.width
+        let startingYPos = UIApplication.shared.statusBarFrame.size.height
+        let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: startingYPos, width: width, height: 44))
+        self.view.addSubview(navigationBar)
         UIHelper.setupNavBar(navigationBar: navigationBar, title: "MOVIE")
+       
+        
+        view.addSubview(popularMovieTable)
+        UIHelper.makeTableView(tableView: popularMovieTable, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: navigationBar.bottomAnchor, bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, bottomConstant: 0, separatorStyle: .singleLine, showsVerticalScrollIndicator: true, backgroundColor: colorHelper.whiteColor)
+        
+        
     }
    
     

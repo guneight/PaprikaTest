@@ -97,9 +97,11 @@ struct UIHelper {
     }
     
     static func setupNavBar(navigationBar: UINavigationBar, title : String){
-        navigationBar.barTintColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
         let navigationItem = UINavigationItem(title: title)
         navigationBar.setItems([navigationItem], animated: false)
+        navigationBar.barTintColor = colorHelper.backgroundBlue
+        navigationBar.tintColor = colorHelper.backgroundBlue
+        UINavigationBar.appearance().isTranslucent = false
         
         
     }
@@ -121,5 +123,9 @@ struct colorHelper {
     
     static var whiteColor : UIColor{
         return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    static var backgroundBlue : UIColor{
+        return #colorLiteral(red: 0.2470588235, green: 0.2901960784, blue: 0.4470588235, alpha: 1)
     }
 }

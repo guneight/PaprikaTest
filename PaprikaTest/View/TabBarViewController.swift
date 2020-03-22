@@ -26,17 +26,17 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate{
         
         popularTabBar.tabBarItem = popularTabBarItem
         
-        
         // Create favoriteTabBar
         let favoriteTabBar = FavoriteMovieViewController()
         let favoriteTabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "favoriteIcon.png"), selectedImage: UIImage(named: "favoriteIcon.png"))
         
-        
         favoriteTabBar.tabBarItem = favoriteTabBarItem
-        UITabBar.appearance().tintColor = #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
-        UITabBar.appearance().backgroundColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
+        UITabBar.appearance().tintColor = colorHelper.colorCaption
+        UITabBar.appearance().backgroundColor = colorHelper.backgroundBlue
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = colorHelper.backgroundBlue
+  
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 12)!], for: .normal)
-        
         self.viewControllers = [popularTabBar, favoriteTabBar]
     }
     

@@ -17,22 +17,22 @@ class FavoriteMovieViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - SetupUI
+    func setupUI(){
+        view.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.2901960784, blue: 0.4470588235, alpha: 1)
+        
+        let width = self.view.frame.width
+        let startingYPos = UIApplication.shared.statusBarFrame.size.height
+        let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: startingYPos, width: width, height: 44))
+        self.view.addSubview(navigationBar)
+        UIHelper.setupNavBar(navigationBar: navigationBar, title: "MOVIE")
     }
-    */
+
+   
 
 }
 
 extension FavoriteMovieViewController{
-    func setupUI(){
-        view.backgroundColor = .red
-    }
+    
     
 }
