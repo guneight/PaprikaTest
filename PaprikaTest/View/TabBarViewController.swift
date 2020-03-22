@@ -31,18 +31,19 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate{
         let favoriteTabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "favoriteIcon.png"), selectedImage: UIImage(named: "favoriteIcon.png"))
         
         favoriteTabBar.tabBarItem = favoriteTabBarItem
-        UITabBar.appearance().tintColor = colorHelper.colorCaption
-        UITabBar.appearance().backgroundColor = colorHelper.backgroundBlue
+        UITabBar.appearance().tintColor = colorHelper.tabbarItemColor
+        UITabBar.appearance().backgroundColor = colorHelper.backgroundColor
         tabBar.isTranslucent = false
-        tabBar.barTintColor = colorHelper.backgroundBlue
+        tabBar.barTintColor = colorHelper.backgroundColor
+        
   
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 12)!], for: .normal)
         self.viewControllers = [popularTabBar, favoriteTabBar]
     }
     
-    // UITabBarControllerDelegate method
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("\(tabBarItem.title)")
+        // UITabBarControllerDelegate method
+        func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
     }
     
     

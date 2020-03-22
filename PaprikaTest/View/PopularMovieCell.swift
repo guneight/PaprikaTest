@@ -22,18 +22,17 @@ class PopularMovieCell: UITableViewCell {
         containerMovieView.addSubview(titleMovieLabel)
         UIHelper.makeLabel(label: titleMovieLabel, leadingAnchor: containerMovieView.leadingAnchor, trailingAnchor: containerMovieView.trailingAnchor, topAnchor: containerMovieView.topAnchor, leadingConstant: 20, trailingConstant: -(widthCell*0.3), topConstant: 10, corner: 0, heightAnchor: 16, backgroundColor:colorHelper.whiteColor )
         
-        UIHelper.setTextLabel(label: titleMovieLabel, fontName: "Arial", allignment: .left, fontColor: colorHelper.colorHeader, weight: .medium, fontSize: 12, text: "Zootopia", kerning: 0)
+        UIHelper.setTextLabel(label: titleMovieLabel, fontName: "Arial", allignment: .left, fontColor: colorHelper.headerColor, weight: .medium, fontSize: 12, text: "Zootopia", kerning: 0)
         
         containerMovieView.addSubview(yearMovieLabel)
         UIHelper.makeLabel(label: yearMovieLabel, leadingAnchor: titleMovieLabel.trailingAnchor, trailingAnchor: containerMovieView.trailingAnchor, topAnchor: containerMovieView.topAnchor, leadingConstant: 20, trailingConstant: -30, topConstant: 10, corner: 0, heightAnchor: 16, backgroundColor:colorHelper.whiteColor )
-        yearMovieLabel.trailingAnchor.constraint(equalTo: containerMovieView.trailingAnchor, constant: -20).isActive = true
                
-        UIHelper.setTextLabel(label: yearMovieLabel, fontName: "Arial", allignment: .right, fontColor: colorHelper.colorHeader, weight: .medium, fontSize: 12, text: "2016", kerning: 0)
+        UIHelper.setTextLabel(label: yearMovieLabel, fontName: "Arial", allignment: .right, fontColor: colorHelper.headerColor, weight: .medium, fontSize: 12, text: "2016", kerning: 0)
         
         containerMovieView.addSubview(synopsisLabel)
         UIHelper.makeLabel(label: synopsisLabel, leadingAnchor: containerMovieView.leadingAnchor, trailingAnchor: containerMovieView.trailingAnchor, topAnchor: titleMovieLabel.bottomAnchor, leadingConstant: 20, trailingConstant: -30, topConstant: 10, corner: 0, heightAnchor: 36,  backgroundColor:colorHelper.whiteColor )
                
-        UIHelper.setTextLabel(label: synopsisLabel, fontName: "Arial", allignment: .left, fontColor: colorHelper.colorHeader, weight: .medium, fontSize: 10, text: "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chancetocrack herfirst case- evenifitmeanspar. Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chancetocrack herfirst case- evenifitmeanspar", kerning: 0)
+        UIHelper.setTextLabel(label: synopsisLabel, fontName: "Arial", allignment: .left, fontColor: colorHelper.textBodyColor, weight: .medium, fontSize: 10, text: "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chancetocrack herfirst case- evenifitmeanspar. Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chancetocrack herfirst case- evenifitmeanspar", kerning: 0)
         synopsisLabel.numberOfLines = 0
     }
     

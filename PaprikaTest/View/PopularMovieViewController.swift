@@ -23,7 +23,7 @@ class PopularMovieViewController: UIViewController {
     // MARK: - setuoUI
     
     func setupUI(){
-        view.backgroundColor = colorHelper.backgroundBlue
+        view.backgroundColor = colorHelper.backgroundColor
         view.layoutIfNeeded()
         popularMovieTable.register(PopularMovieCell.self, forCellReuseIdentifier: "popularMovieCell")
         

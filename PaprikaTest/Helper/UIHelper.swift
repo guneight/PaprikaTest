@@ -21,7 +21,7 @@ struct UIHelper {
             tableView.topAnchor.constraint(equalTo: topAnchor, constant: topConstant),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: bottomConstant)
         ])
-        
+        tableView.clipsToBounds = true
         tableView.separatorStyle = separatorStyle
         tableView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
         tableView.backgroundColor = backgroundColor
@@ -29,7 +29,7 @@ struct UIHelper {
         
     }
     
-    static func makeCollectionView(collectionView : UICollectionView,leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,trailingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, bottomAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor> ,leadingConstant: CGFloat, trailingConstant: CGFloat, topConstant: CGFloat, bottomConstant: CGFloat, scrollEnable:Bool, showsVerticalScrollIndicator : Bool,showHorizontalScrollIndicator backgroundColor : UIColor){
+    static func makeCollectionView(collectionView : UICollectionView,leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,trailingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, bottomAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor> ,leadingConstant: CGFloat, trailingConstant: CGFloat, topConstant: CGFloat, bottomConstant: CGFloat, scrollEnable:Bool, showsVerticalScrollIndicator : Bool,showHorizontalScrollIndicator: Bool, backgroundColor : UIColor){
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -40,7 +40,8 @@ struct UIHelper {
         ])
         
         collectionView.isScrollEnabled = scrollEnable
-        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
+        collectionView.showsHorizontalScrollIndicator = showHorizontalScrollIndicator
         collectionView.backgroundColor = backgroundColor
         collectionView.layoutIfNeeded()
     }
@@ -86,6 +87,7 @@ struct UIHelper {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = corner
         imageView.backgroundColor = backgroundColor
+        imageView.contentMode = .scaleAspectFit
         imageView.layoutIfNeeded()
     }
     
@@ -99,9 +101,13 @@ struct UIHelper {
     static func setupNavBar(navigationBar: UINavigationBar, title : String){
         let navigationItem = UINavigationItem(title: title)
         navigationBar.setItems([navigationItem], animated: false)
-        navigationBar.barTintColor = colorHelper.backgroundBlue
-        navigationBar.tintColor = colorHelper.backgroundBlue
+        navigationBar.barTintColor = colorHelper.backgroundColor
+        navigationBar.tintColor = colorHelper.backgroundColor
         UINavigationBar.appearance().isTranslucent = false
+        let logo = UIImage(named: "appIcon2")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .center
+        navigationItem.titleView = imageView
         
         
     }
@@ -109,23 +115,27 @@ struct UIHelper {
 
 
 struct colorHelper {
-    static var colorHeader : UIColor{
+    static var headerColor : UIColor{
         return #colorLiteral(red: 0.2235294118, green: 0.2235294118, blue: 0.2235294118, alpha: 1)
     }
     
-    static var colorBody : UIColor{
+    static var textBodyColor : UIColor{
         return #colorLiteral(red: 0.2235294118, green: 0.2235294118, blue: 0.2235294118, alpha: 0.8)
     }
     
-    static var colorCaption : UIColor{
-        return #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+    static var captionColor : UIColor{
+        return #colorLiteral(red: 0.3647058824, green: 0.2941176471, blue: 0.1215686275, alpha: 1)
     }
     
     static var whiteColor : UIColor{
         return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
-    static var backgroundBlue : UIColor{
+    static var backgroundColor : UIColor{
         return #colorLiteral(red: 0.2470588235, green: 0.2901960784, blue: 0.4470588235, alpha: 1)
+    }
+    
+    static var tabbarItemColor : UIColor{
+        return #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
     }
 }

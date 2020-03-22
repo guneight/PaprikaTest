@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67B0C92D242728D9008DEBA5 /* FavoritesMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C92C242728D9008DEBA5 /* FavoritesMovieCell.swift */; };
 		67EA328924265BE700ED9F1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA328824265BE700ED9F1F /* AppDelegate.swift */; };
 		67EA328B24265BE700ED9F1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA328A24265BE700ED9F1F /* SceneDelegate.swift */; };
 		67EA329324265BE700ED9F1F /* PaprikaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67EA329124265BE700ED9F1F /* PaprikaTest.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67B0C92C242728D9008DEBA5 /* FavoritesMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMovieCell.swift; sourceTree = "<group>"; };
 		67EA328524265BE700ED9F1F /* PaprikaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaprikaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EA328824265BE700ED9F1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EA328A24265BE700ED9F1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				67EA32A524266AD800ED9F1F /* FavoriteMovieViewController.swift */,
 				67EA32A724267D3800ED9F1F /* TabBarViewController.swift */,
 				67F7C7172426E079009E5AF9 /* PopularMovieCell.swift */,
+				67B0C92C242728D9008DEBA5 /* FavoritesMovieCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F7C7182426E079009E5AF9 /* PopularMovieCell.swift in Sources */,
+				67B0C92D242728D9008DEBA5 /* FavoritesMovieCell.swift in Sources */,
 				67EA329324265BE700ED9F1F /* PaprikaTest.xcdatamodeld in Sources */,
 				67EA32A424266AC800ED9F1F /* PopularMovieViewController.swift in Sources */,
 				67EA32A624266AD800ED9F1F /* FavoriteMovieViewController.swift in Sources */,
