@@ -61,13 +61,13 @@ struct UIHelper {
         view.layoutIfNeeded()
     }
     
-    static func makeLabel(label : UILabel, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat,widthtAnchor : CGFloat, backgroundColor: UIColor){
+    static func makeLabel(label : UILabel, leadingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>, trailingAnchor : NSLayoutAnchor<NSLayoutXAxisAnchor>,topAnchor : NSLayoutAnchor<NSLayoutYAxisAnchor>, leadingConstant: CGFloat, trailingConstant: CGFloat, topConstant: CGFloat, corner : CGFloat, heightAnchor : CGFloat, backgroundColor: UIColor){
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstant),
             label.topAnchor.constraint(equalTo: topAnchor, constant: topConstant),
             label.heightAnchor.constraint(equalToConstant: heightAnchor),
-            label.widthAnchor.constraint(equalToConstant: widthtAnchor)
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: trailingConstant)
         ])
         label.backgroundColor = backgroundColor
         label.layer.masksToBounds = true
@@ -89,10 +89,19 @@ struct UIHelper {
         imageView.layoutIfNeeded()
     }
     
-    static func setTextLabel(label : UILabel, fontName : String!, fontColor : UIColor, weight : UIFont.Weight,fontSize: CGFloat, text : String, kerning : CGFloat){
+    static func setTextLabel(label : UILabel, fontName : String!, allignment: NSTextAlignment, fontColor : UIColor, weight : UIFont.Weight,fontSize: CGFloat, text : String, kerning : CGFloat){
         label.attributedText = NSAttributedString(string: text, attributes: [.kern: kerning])
         label.textColor = fontColor
         label.font = UIFont(name: fontName, size: fontSize)
+        label.textAlignment = allignment
+    }
+    
+    static func setupNavBar(navigationBar: UINavigationBar, title : String){
+        navigationBar.barTintColor = #colorLiteral(red: 0.2458193898, green: 0.2900034189, blue: 0.4485326409, alpha: 1)
+        let navigationItem = UINavigationItem(title: title)
+        navigationBar.setItems([navigationItem], animated: false)
+        
+        
     }
 }
 
@@ -108,5 +117,9 @@ struct colorHelper {
     
     static var colorCaption : UIColor{
         return #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+    }
+    
+    static var whiteColor : UIColor{
+        return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }
