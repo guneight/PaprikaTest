@@ -20,13 +20,27 @@ class FavoriteMovieViewController: UIViewController {
         return cvPromo
     }()
     
+    var favoritesMovies : Movie?
+    var searchMovies : Movie?
+    var isSearching : Bool = false
+    var movieSearch : [Result] = []
+    var MovieSearch : [Result] = []
+    var movieRow : Int = 0
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDataFromApi()
         setupUI()
         movieCollectionView.delegate = self
         movieCollectionView.dataSource = self
+        searchBar.delegate = self
         view.layoutIfNeeded()
+         searchBarTextDidBeginEditing(searchBar)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getDataFromApi()
     }
     
     // MARK: - SetupUI
@@ -52,31 +66,35 @@ class FavoriteMovieViewController: UIViewController {
         
         view.addSubview(movieCollectionView)
         UIHelper.makeCollectionView(collectionView: movieCollectionView, leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor, trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor, topAnchor: searchBar.bottomAnchor, bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor, leadingConstant: 0, trailingConstant: 0, topConstant: 0, bottomConstant: 0, scrollEnable: true, showsVerticalScrollIndicator: false, showHorizontalScrollIndicator: false, backgroundColor: colorHelper.whiteColor)
-        
-        
+    
+        let tapGesture  = UITapGestureRecognizer(target: self, action:#selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
-
-   
-
+    
+ 
 }
 
 
  // MARK: - extension collectionView
 extension FavoriteMovieViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return favoritesMovies?.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cellFavorites", for: indexPath) as! FavoritesMovieCollectionViewCell
         cell.backgroundColor  = colorHelper.whiteColor
+        cell.titleMovieLabel.text = favoritesMovies?.results[indexPath.row].title 
+        let urlImage = "\(favoritesMovies?.results[indexPath.row].posterPath ?? " ")"
+        downloadImageFromUrl(url: urlImage, imageView: cell.movieImage)
+        print("urlImage : \(urlImage)")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
         print("width: \(width)")
-        return CGSize(width: width*0.5-20, height: width*0.8)
+        return CGSize(width: width*0.5-20, height: width*0.7)
     }
     
     
@@ -86,6 +104,7 @@ extension FavoriteMovieViewController : UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
         
     }
     

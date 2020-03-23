@@ -136,6 +136,12 @@ struct colorHelper {
     }
     
     static var tabbarItemColor : UIColor{
-        return #colorLiteral(red: 0.9607843137, green: 0.5098039216, blue: 0.1254901961, alpha: 1)
+        return #colorLiteral(red: 0.9607843137, green: 0.6509803922, blue: 0.137254902, alpha: 1)
     }
+    
+    static var CollectionLabelColor : UIColor{
+           return #colorLiteral(red: 0.9803921569, green: 0.8039215686, blue: 0.1843137255, alpha: 1)
+       }
+       
+    
 }

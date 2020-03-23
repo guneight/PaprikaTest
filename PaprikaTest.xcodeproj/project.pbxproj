@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		678E02CB2429128D00D7D935 /* searchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678E02CA2429128D00D7D935 /* searchModel.swift */; };
 		67B0C92D242728D9008DEBA5 /* FavoritesMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C92C242728D9008DEBA5 /* FavoritesMovieCell.swift */; };
+		67B0C92F242769A4008DEBA5 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C92E242769A4008DEBA5 /* MovieModel.swift */; };
+		67B0C9312427BE10008DEBA5 /* APIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C9302427BE10008DEBA5 /* APIControl.swift */; };
+		67B0C9332427C0FB008DEBA5 /* PopularMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0C9322427C0FB008DEBA5 /* PopularMovieViewModel.swift */; };
 		67EA328924265BE700ED9F1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA328824265BE700ED9F1F /* AppDelegate.swift */; };
 		67EA328B24265BE700ED9F1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA328A24265BE700ED9F1F /* SceneDelegate.swift */; };
 		67EA329324265BE700ED9F1F /* PaprikaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67EA329124265BE700ED9F1F /* PaprikaTest.xcdatamodeld */; };
@@ -21,7 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		678E02CA2429128D00D7D935 /* searchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchModel.swift; sourceTree = "<group>"; };
 		67B0C92C242728D9008DEBA5 /* FavoritesMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesMovieCell.swift; sourceTree = "<group>"; };
+		67B0C92E242769A4008DEBA5 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		67B0C9302427BE10008DEBA5 /* APIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIControl.swift; sourceTree = "<group>"; };
+		67B0C9322427C0FB008DEBA5 /* PopularMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieViewModel.swift; sourceTree = "<group>"; };
 		67EA328524265BE700ED9F1F /* PaprikaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaprikaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67EA328824265BE700ED9F1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67EA328A24265BE700ED9F1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 		67EA329F2426693D00ED9F1F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				67B0C9322427C0FB008DEBA5 /* PopularMovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -102,6 +111,8 @@
 		67EA32A12426695600ED9F1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67B0C92E242769A4008DEBA5 /* MovieModel.swift */,
+				678E02CA2429128D00D7D935 /* searchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				67F7C7192426E186009E5AF9 /* UIHelper.swift */,
+				67B0C9302427BE10008DEBA5 /* APIControl.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -186,13 +198,17 @@
 			files = (
 				67F7C7182426E079009E5AF9 /* PopularMovieCell.swift in Sources */,
 				67B0C92D242728D9008DEBA5 /* FavoritesMovieCell.swift in Sources */,
+				67B0C92F242769A4008DEBA5 /* MovieModel.swift in Sources */,
 				67EA329324265BE700ED9F1F /* PaprikaTest.xcdatamodeld in Sources */,
 				67EA32A424266AC800ED9F1F /* PopularMovieViewController.swift in Sources */,
 				67EA32A624266AD800ED9F1F /* FavoriteMovieViewController.swift in Sources */,
 				67EA328924265BE700ED9F1F /* AppDelegate.swift in Sources */,
+				678E02CB2429128D00D7D935 /* searchModel.swift in Sources */,
 				67EA32A824267D3800ED9F1F /* TabBarViewController.swift in Sources */,
 				67EA328B24265BE700ED9F1F /* SceneDelegate.swift in Sources */,
+				67B0C9332427C0FB008DEBA5 /* PopularMovieViewModel.swift in Sources */,
 				67F7C71A2426E186009E5AF9 /* UIHelper.swift in Sources */,
+				67B0C9312427BE10008DEBA5 /* APIControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
